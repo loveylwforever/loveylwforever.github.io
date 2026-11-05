@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>Jamie Gao</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://loveylwforever.github.io/</id>
+  <link href="https://loveylwforever.github.io/" rel="alternate"/>
+  <link href="https://loveylwforever.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, Jamie Gao</rights>
+  <subtitle>记录技术、架构与工程实践</subtitle>
+  <title>高健的博客</title>
+  <updated>2026-11-05T14:40:00.000Z</updated>
+  <entry>
+    <author>
+      <name>Jamie Gao</name>
+    </author>
+    <category term="博客" scheme="https://loveylwforever.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="Hexo" scheme="https://loveylwforever.github.io/tags/Hexo/"/>
+    <category term="Butterfly" scheme="https://loveylwforever.github.io/tags/Butterfly/"/>
+    <category term="博客" scheme="https://loveylwforever.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <content>
+      <![CDATA[<p>这个博客之前只有 Hexo 的默认示例内容，站点配置也停留在 <code>http://example.com</code>。这次做了一次完整的重建：保留原有访问路径，同时把配置、资源和发布流程理顺。</p><h2 id="这次修了什么"><a href="#这次修了什么" class="headerlink" title="这次修了什么"></a>这次修了什么</h2><ul><li>站点 URL 改成真实地址，修正全站 canonical、Open Graph 和结构化数据</li><li>修复 favicon 404，以及「标签 &#x2F; 分类」两个死链</li><li>补上 <code>robots.txt</code>、<code>sitemap.xml</code>、RSS 和 404 页面</li><li>头像从 272 KB 的 1024×1024 PNG 换成 8 KB 的 WebP</li><li>打开本地搜索、标签页和分类页</li></ul><h2 id="写作方式"><a href="#写作方式" class="headerlink" title="写作方式"></a>写作方式</h2><p>新增文章：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure><p>本地预览：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo server</span><br></pre></td></tr></table></figure><p>生成与发布由 GitHub Actions 完成，推送源码后自动构建并更新站点。</p><h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><p>这个博客会用来记录 Java、后端架构与 AI 工程相关的实践。慢一点，但写清楚。</p>]]>
+    </content>
+    <id>https://loveylwforever.github.io/2025/09/19/hello-world/</id>
+    <link href="https://loveylwforever.github.io/2025/09/19/hello-world/"/>
+    <published>2025-09-19T12:20:08.000Z</published>
+    <summary>这次重建修掉了站点 URL、favicon、死链等配置问题，并把构建和发布流程整理成可持续维护的形式。</summary>
+    <title>博客重启：从默认模板到可维护的写作环境</title>
+    <updated>2026-11-05T14:40:00.000Z</updated>
+  </entry>
+</feed>
