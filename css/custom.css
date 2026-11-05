@@ -53,6 +53,16 @@
     max-width: none;
   }
 
+  #rightside {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  #rightside.rightside-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(12px);
+  }
+
   #article-container table {
     display: block;
     width: 100%;
