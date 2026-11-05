@@ -1,0 +1,27 @@
+@media screen and (max-width: 768px) {
+  #post-info #post-meta > .meta-firstline,
+  #post-info #post-meta > .meta-secondline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 6px;
+  }
+
+  #post-info #post-meta .post-meta-separator {
+    display: none;
+  }
+
+  #post-info #post-meta .post-meta-date,
+  #post-info #post-meta .post-meta-categories,
+  #post-info #post-meta .post-meta-wordcount,
+  #post-info #post-meta .post-meta-pv-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  #post-info #post-meta .post-meta-wordcount {
+    flex-wrap: nowrap;
+  }
+}
