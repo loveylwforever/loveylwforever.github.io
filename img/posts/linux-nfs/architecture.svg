@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" role="img" aria-labelledby="title desc">
+  <title id="title">NFS 共享存储拓扑</title>
+  <desc id="desc">NFS 服务端 192.168.1.10 导出 /data/nfs，客户端 192.168.1.20 通过局域网挂载到 /mnt/nfs。</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4FA3D1"/>
+    </marker>
+    <style>
+      .bg { fill: #0F2432; }
+      .panel { fill: #153345; stroke: #2B5368; stroke-width: 1.2; }
+      .panel-inner { fill: #0F2432; stroke: #2B5368; stroke-width: 1; }
+      .title { fill: #F2F7FA; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 26px; font-weight: 600; }
+      .subtitle { fill: #9FB6C4; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 14px; }
+      .role { fill: #E8F1F6; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 19px; font-weight: 600; }
+      .ip { fill: #4FA3D1; font-family: "SFMono-Regular",Menlo,Consolas,monospace; font-size: 14px; }
+      .label { fill: #9FB6C4; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 13px; }
+      .path { fill: #E8F1F6; font-family: "SFMono-Regular",Menlo,Consolas,monospace; font-size: 15px; }
+      .chip-text { fill: #CFE2EC; font-family: "SFMono-Regular",Menlo,Consolas,monospace; font-size: 12px; }
+      .net { fill: #4FA3D1; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 14px; font-weight: 500; }
+      .net-sub { fill: #9FB6C4; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 12px; }
+      .note { fill: #8FA8B7; font-family: "PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size: 12px; }
+      .line { stroke: #4FA3D1; stroke-width: 1.8; stroke-dasharray: 6 5; fill: none; }
+      .solid { stroke: #2B5368; stroke-width: 1; fill: none; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1000" height="520" rx="16"/>
+  <text class="title" x="48" y="58">NFS 共享存储拓扑</text>
+  <text class="subtitle" x="48" y="84">服务端导出共享目录，客户端通过局域网挂载使用</text>
+
+  <!-- Server -->
+  <rect class="panel" x="52" y="120" width="300" height="320" rx="14"/>
+  <text class="role" x="76" y="158">NFS 服务端</text>
+  <text class="ip" x="76" y="184">192.168.1.10</text>
+  <text class="label" x="76" y="208">CentOS / Rocky / AlmaLinux</text>
+
+  <rect class="panel-inner" x="76" y="228" width="252" height="76" rx="10"/>
+  <text class="label" x="92" y="254">导出目录</text>
+  <text class="path" x="92" y="282">/data/nfs</text>
+
+  <rect class="panel-inner" x="76" y="324" width="252" height="44" rx="10"/>
+  <text class="chip-text" x="92" y="351">nfs-server  :2049</text>
+
+  <rect class="panel-inner" x="76" y="376" width="252" height="44" rx="10"/>
+  <text class="chip-text" x="92" y="403">rpcbind     :111</text>
+
+  <!-- Client -->
+  <rect class="panel" x="648" y="120" width="300" height="320" rx="14"/>
+  <text class="role" x="672" y="158">NFS 客户端</text>
+  <text class="ip" x="672" y="184">192.168.1.20</text>
+  <text class="label" x="672" y="208">Linux（同网段或已放行）</text>
+
+  <rect class="panel-inner" x="672" y="228" width="252" height="76" rx="10"/>
+  <text class="label" x="688" y="254">挂载点</text>
+  <text class="path" x="688" y="282">/mnt/nfs</text>
+
+  <rect class="panel-inner" x="672" y="324" width="252" height="44" rx="10"/>
+  <text class="chip-text" x="688" y="351">mount -t nfs</text>
+
+  <rect class="panel-inner" x="672" y="376" width="252" height="44" rx="10"/>
+  <text class="chip-text" x="688" y="403">/etc/fstab（开机挂载）</text>
+
+  <!-- Network -->
+  <line class="line" x1="352" y1="270" x2="626" y2="270" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text class="net" x="430" y="248">TCP / 局域网</text>
+  <text class="net-sub" x="424" y="296">NFS 协议</text>
+
+  <!-- Bottom note -->
+  <text class="note" x="52" y="482">NFSv3：2049 + rpcbind 111 + mountd；NFSv4：仅需 2049。生产环境只放行必要网段与端口。</text>
+  <text class="note" x="52" y="504">读写权限由 /etc/exports、目录属主和 SELinux 共同决定。</text>
+</svg>
